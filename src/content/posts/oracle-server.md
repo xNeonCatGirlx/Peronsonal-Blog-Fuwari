@@ -2,7 +2,7 @@
 title: Free Tier Oracle server experience
 published: 2025-12-25
 description: 'Setting up oracle server'
-image: "assets/images/oserver.webp"
+image: "/src/assets/images/oracle-server/oserver.webp"
 tags: [Guide,Experience,Blogging]
 category: Guides
 draft: false 
@@ -18,7 +18,7 @@ For a period of time, I was having "server-less life" and it felt like someone w
 ## Determine the resources we can use
 
 First of all, Oracle provide two types of free shapes. You can read more about it [here](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
-![](/src/assets/images/avaliable_shape.webp)
+![](/src/assets/images/oracle-server/avaliable_shape.webp)
 
 Oracle also provide you with some free credit before it expires, so you can create some powerful servers and have some fun before creating the free tier server.
 
@@ -43,7 +43,7 @@ Now, you want to "Create instance". Set the name to anything you want.
 ## Image
 
 For the image part, if you know which type of OS Server works best for you, choose it. If not, I would recomment Ubuntu server
-![](../assets/images/instance_image.webp)
+![](/src/assets/images/oracle-server/instance_image.webp)
 
 ## Shape
 
@@ -57,27 +57,29 @@ At the bottom of the Networking page, there is a option for "Download private ke
 
 ## Storage
 
-Now on to the Storage part, create a Boot volume of any size equal or under 200GB, if you are setting up an ARM machine (Which you can only set up one) , then it would be better to use the full 200GB of free storage. If you are planning to set up multiple servers using the AMD Processor, when you would want to have 200/(number of server) to get the storage fully utilized.
+Now on to the Storage part, create a Boot volume of any size equal or under 200GB, if you are setting up an ARM machine (Which you can only set up one) , then it would be better to use the full 200GB of free storage. If you are planning to set up multiple servers using the AMD Processor, when you would want to have 200/(number of server) to get the storage fully utilized. Ignore the warning on the screenshot because I've already used my credit.
+
+![](/src/assets/images/oracle-server/boot_volume.webp)
 
 After storage, head to review page and make sure all your server information are correct and create!
 
 # Tweaking time~
 
 Now, head to the instance section and you should see your server. Make sure there is a **Always Free** sign at the end of your server name. 
-![](../assets/images/always_free.webp)
+![](/src/assets/images/oracle-server/always_free.webp)
 
 Take a note of your Public IP, and click on the server name. You should see a list of options you can make changes.
-![](option_list.webp)
+![](/src/assets/images/oracle-server/option_list.webp)
 
 ## Networking
 
 Click on networking and click on your subnet. 
-![](../assets/images/security_list.webp)
+![](/src/assets/images/oracle-server/security_list.webp)
 
 Instead of making changes to the Default Security List for *Server Name*. I recommend to create a new security list, as you have a high chance of messing up and causing you not able to ssh into the server later on.
 
 Name the security list as anything you want. Open it and head to Security rules section. Here, you want to open the port needed for your project later on.
-![](../assets/images/security_rules.webp)
+![](/src/assets/images/oracle-server/security_rules.webp)
 
 Here is some of the ports I have opened
 | Port | Description |                                                                                                                                                                                   
@@ -89,7 +91,7 @@ Here is some of the ports I have opened
 | `25565`      |Take a guess? Of course it's for :spoiler[Minecraft Server!]         
 
 To create a ingress of egress rule. Click on the "Add Ingress/Egress rule"
-![](../assets/images/ingress_rule.webp)
+![](/src/assets/images/oracle-server/ingress_rule.webp)
 
 For the "Source CIDR" if you want to be able to access this port everywhere, put **0.0.0.0/0**. Fill in "Srouce Port Range" with **All**, and "Destination Port Range" as needed. I would recommend you to open port **80, 443** and **8388** on both ingress and egress before you add any other ports, it may cause you to have problem accessing package manager later on.
 
@@ -142,6 +144,7 @@ Learn more about enabling ESM Apps service at https://ubuntu.com/esm
 Last login: hh:mm:ss from XXX.XXX.XXX.XXX
 ubuntu@host-10-0-0-XX:~$
 ```
+## Update your server
 
 Before you do anything else, update your server OS, as there are recently many crypto mining virus on the internet. And you do not want to have it.
 
@@ -150,3 +153,44 @@ sudo apt full-upgrade
 ```
 
 You will then see a bunch of service and updates, with a prompt saying "Do you want to continue? [Y/n]" Type in Y to continue.
+
+To monitor your server with a better CLI GUI, btop is very handy to use. It allows you to monitor various of system info easily. To install, run
+
+```bash
+sudo apt install btop
+```
+
+Type Y to confirm. After that, run with this command
+
+```bash
+btop
+```
+And a nice CLI GUI should appear on your screen. To get out of it, press Ctrl+C
+
+:::tip
+You can press **ESC** to adjust the theme and settings.
+:::
+
+The server doesn't automatically come with a swap, causing a lot of problem for me in the early stage, as anything heavier than a few hundred MB will cause the system to come to a halt, so to have better performance, we will need to create a swap. Run the command one by one.
+
+```bash
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+What does those command do
+
+1.Create the swap file, the file size is 4GB, adjust it based on your need
+
+2.Secure the file
+
+3.Set it up as a swap
+
+4.Enable swap
+
+# Enjoy!
+
+Aaaaaaand that is pretty much it. You should by now have a working server and feel free to mess around with it. 
+
+I am planning to have a seperate blog about interesting projects you can run on your server, from easy to hard. This is my first ever blog and hope you like it. There will be more blog abot tech and planes coming up.
