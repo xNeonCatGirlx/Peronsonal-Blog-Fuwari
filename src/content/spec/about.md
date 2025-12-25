@@ -1,9 +1,10 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+This is the personal blog site of [NeonCatGirl](https://ncgdrive.site/).
 
-::github{repo="saicaca/fuwari"}
+The website is open-sourced and forked from fuwari.
+
+::github{repo="xNeonCatGirlx/Peronsonal-Blog-Fuwari"}
 
 > ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+> - [NeonCatGirl's Drive](https://ol.ncgdrive.site/%E7%94%98%E5%9F%8E%E7%8C%AB%E7%8C%AB)
+> - [NEO TOKYO NOIR 01](https://www.pixiv.net/artworks/111024784) by [空天](https://www.pixiv.net/users/94714949)
