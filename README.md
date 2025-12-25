@@ -6,7 +6,7 @@
 
 A static blog template built with [Astro](https://astro.build).
 
-[**🖥️ NeonCatGirl Blog**](https:blog.ncgdrive.site)
+[**🖥️ NeonCatGirl Blog**](https://blog.ncgdrive.site)
 
 ## ✨ Features
 
