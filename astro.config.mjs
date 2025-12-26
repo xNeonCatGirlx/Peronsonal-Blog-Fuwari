@@ -169,5 +169,7 @@ export default defineConfig({
 				},
 			},
 		},
+	    server: {
+        allowedHosts: ['blog.ncgdive.site']
 	},
 });
