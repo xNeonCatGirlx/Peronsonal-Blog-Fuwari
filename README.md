@@ -23,7 +23,7 @@ A static blog template built with [Astro](https://astro.build).
 ## 🚀 Getting Started
 
 1. Create your blog repository:
-    - Fork this repository.
+    - Fork this repository or click "Use Template on this page"
 2. To edit your blog locally, clone your repository, run `pnpm install` to install dependencies.
     - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
 3. Edit the config file `src/config.ts` to customize your blog.
