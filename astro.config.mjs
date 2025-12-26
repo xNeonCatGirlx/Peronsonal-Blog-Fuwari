@@ -172,4 +172,7 @@ export default defineConfig({
 			allowedHosts: ["blog.ncgdrive.site"],
 		},
 	},
+	devToolbar: {
+		enabled: false,
+	},
 });

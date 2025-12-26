@@ -2,7 +2,7 @@
 title: Free Tier Oracle server experience
 published: 2025-12-25
 description: 'Setting up oracle server'
-image: "/src/assets/images/oracle-server/oserver.webp"
+image: "/assets/images/oracle-server/oserver.webp"
 tags: [Guide,Experience,Blogging]
 category: Guides
 draft: false 
@@ -18,7 +18,7 @@ For a period of time, I was having "server-less life" and it felt like someone w
 ## Determine the resources we can use
 
 First of all, Oracle provide two types of free shapes. You can read more about it [here](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm)
-![](/src/assets/images/oracle-server/avaliable_shape.webp)
+![](/assets/images/oracle-server/avaliable_shape.webp)
 
 Oracle also provide you with some free credit before it expires, so you can create some powerful servers and have some fun before creating the free tier server.
 
@@ -43,7 +43,7 @@ Now, you want to "Create instance". Set the name to anything you want.
 ## Image
 
 For the image part, if you know which type of OS Server works best for you, choose it. If not, I would recomment Ubuntu server
-![](/src/assets/images/oracle-server/instance_image.webp)
+![](/assets/images/oracle-server/instance_image.webp)
 
 ## Shape
 
@@ -59,27 +59,27 @@ At the bottom of the Networking page, there is a option for "Download private ke
 
 Now on to the Storage part, create a Boot volume of any size equal or under 200GB, if you are setting up an ARM machine (Which you can only set up one) , then it would be better to use the full 200GB of free storage. If you are planning to set up multiple servers using the AMD Processor, when you would want to have 200/(number of server) to get the storage fully utilized. Ignore the warning on the screenshot because I've already used my credit.
 
-![](/src/assets/images/oracle-server/boot_volume.webp)
+![](/assets/images/oracle-server/boot_volume.webp)
 
 After storage, head to review page and make sure all your server information are correct and create!
 
 # Tweaking time~
 
 Now, head to the instance section and you should see your server. Make sure there is a **Always Free** sign at the end of your server name. 
-![](/src/assets/images/oracle-server/always_free.webp)
+![](/assets/images/oracle-server/always_free.webp)
 
 Take a note of your Public IP, and click on the server name. You should see a list of options you can make changes.
-![](/src/assets/images/oracle-server/option_list.webp)
+![](/assets/images/oracle-server/option_list.webp)
 
 ## Networking
 
 Click on networking and click on your subnet. 
-![](/src/assets/images/oracle-server/security_list.webp)
+![](/assets/images/oracle-server/security_list.webp)
 
 Instead of making changes to the Default Security List for *Server Name*. I recommend to create a new security list, as you have a high chance of messing up and causing you not able to ssh into the server later on.
 
 Name the security list as anything you want. Open it and head to Security rules section. Here, you want to open the port needed for your project later on.
-![](/src/assets/images/oracle-server/security_rules.webp)
+![](/assets/images/oracle-server/security_rules.webp)
 
 Here is some of the ports I have opened
 | Port | Description |                                                                                                                                                                                   
@@ -91,7 +91,7 @@ Here is some of the ports I have opened
 | `25565`      |Take a guess? Of course it's for :spoiler[Minecraft Server!]         
 
 To create a ingress of egress rule. Click on the "Add Ingress/Egress rule"
-![](/src/assets/images/oracle-server/ingress_rule.webp)
+![](/assets/images/oracle-server/ingress_rule.webp)
 
 For the "Source CIDR" if you want to be able to access this port everywhere, put **0.0.0.0/0**. Fill in "Srouce Port Range" with **All**, and "Destination Port Range" as needed. I would recommend you to open port **80, 443** and **8388** on both ingress and egress before you add any other ports, it may cause you to have problem accessing package manager later on.
 

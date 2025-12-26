@@ -17,7 +17,7 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "assets/images/background.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		src: "/assets/images/background.webp", // Served from /public for both dev and build
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
 		credit: {
 			enable: true, // Display the credit text of the banner image
@@ -53,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/headimg_dl.webp", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+	avatar: "/assets/images/headimg_dl.webp", // Served from /public for both dev and build
 	name: "David Yang",
 	bio: "Live in the neon moment.",
 	links: [
