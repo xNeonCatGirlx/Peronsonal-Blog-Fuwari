@@ -169,7 +169,7 @@ export default defineConfig({
 			},
 		},
 		server: {
-			allowedHosts: ["blog.ncgdrive.site", "localhost", "127.0.0.1"],
+			allowedHosts: "all",
 		},
 	},
 	devToolbar: {
