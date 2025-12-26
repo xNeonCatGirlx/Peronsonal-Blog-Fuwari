@@ -170,10 +170,10 @@ export default defineConfig({
 			},
 		},
 		server: {
-			allowedHosts: "all",
+			allowedHosts: true,
 		},
 		preview: {
-			allowedHosts: "all",
+			allowedHosts: true,
 			host: true,
 			port: 4321,
 		},
