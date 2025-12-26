@@ -24,7 +24,6 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
-// https://astro.build/config
 export default defineConfig({
 	site: "https://blog.ncgdrive.site/",
 	base: "/",
@@ -36,8 +35,6 @@ export default defineConfig({
 		swup({
 			theme: false,
 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
-			// the default value `transition-` cause transition delay
-			// when the Tailwind class `transition-all` is used
 			containers: ["main", "#toc"],
 			smoothScrolling: true,
 			cache: true,
@@ -154,22 +151,25 @@ export default defineConfig({
 			],
 		],
 	},
+	server: {
+		host: true,
+		port: 4321,
+	},
 	vite: {
 		build: {
 			rollupOptions: {
 				onwarn(warning, warn) {
-					// temporarily suppress this warning
 					if (
 						warning.message.includes("is dynamically imported by") &&
 						warning.message.includes("but also statically imported by")
-					) {
+					)
 						return;
-					}
 					warn(warning);
 				},
 			},
 		},
-	    server: {
-        allowedHosts: ['blog.ncgdive.site']
+		server: {
+			allowedHosts: ["blog.ncgdrive.site"],
+		},
 	},
 });
