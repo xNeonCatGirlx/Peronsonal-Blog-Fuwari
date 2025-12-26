@@ -173,8 +173,7 @@ export default defineConfig({
 			allowedHosts: "all",
 		},
 		preview: {
-			// Allow preview to accept requests from our domain and local access
-			allowedHosts: ["https://blog.ncgdrive.site", "localhost", "127.0.0.1"],
+			allowedHosts: "all",
 			host: true,
 			port: 4321,
 		},
