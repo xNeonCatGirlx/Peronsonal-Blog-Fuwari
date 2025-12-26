@@ -25,9 +25,10 @@ import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 export default defineConfig({
-	site: "https://blog.ncgdrive.site/",
+	site: "https://blog.ncgdrive.site",
 	base: "/",
 	trailingSlash: "always",
+	output: "static",
 	integrations: [
 		tailwind({
 			nesting: true,
@@ -173,7 +174,7 @@ export default defineConfig({
 		},
 		preview: {
 			// Allow preview to accept requests from our domain and local access
-			allowedHosts: ["blog.ncgdrive.site", "localhost", "127.0.0.1"],
+			allowedHosts: ["https://blog.ncgdrive.site", "localhost", "127.0.0.1"],
 			host: true,
 			port: 4321,
 		},
