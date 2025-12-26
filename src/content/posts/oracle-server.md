@@ -23,31 +23,31 @@ First of all, Oracle provide two types of free shapes. You can read more about i
 Oracle also provide you with some free credit before it expires, so you can create some powerful servers and have some fun before creating the free tier server.
 
 :::note
-In many places, the ARM instance is not avaliable, so you will need some luck to get it. I chose France (Paris) and appearently all of the ARM instances are taken. So I had no choice but to use the AMD Processor instance.
+In many places, the ARM instance is not available, so you will need some luck to get it. I chose France (Paris) and apparently all of the ARM instances are taken. So I had no choice but to use the AMD Processor instance.
 :::
 
 To create an account, you first head to [Oracle](https://www.oracle.com/). Where you will find "View Accounts" at the top right corner, and "Sign Up for Free Cloud Tier"
 
-Carefully go through the regestration. Choose a region that is cloest to you for better network performance and connection.
+Carefully go through the registration. Choose a region that is closest to you for better network performance and connection.
 
 :::warning
-It is important to use real adress and card details, since Oracle have the rights to confiscate your server at any point. And Oracle does check your card detail frequently. DO NOT USE a VPN and digital bank cards during set up process
+It is important to use real address and card details, since Oracle have the rights to confiscate your server at any point. And Oracle does check your card detail frequently. DO NOT USE a VPN and digital bank cards during set up process
 :::
 
 # Creating a free tier server
 
-After regestration, head to the [Cloud Console](https://cloud.oracle.com/). At the top of the page, search for "Instance", and click the "Instance" under "Services"
+After registration, head to the [Cloud Console](https://cloud.oracle.com/). At the top of the page, search for "Instance", and click the "Instance" under "Services"
 
 Now, you want to "Create instance". Set the name to anything you want.
 
 ## Image
 
-For the image part, if you know which type of OS Server works best for you, choose it. If not, I would recomment Ubuntu server
+For the image part, if you know which type of OS Server works best for you, choose it. If not, I would recommend Ubuntu server
 ![](/assets/images/oracle-server/instance_image.webp)
 
 ## Shape
 
-Edit the shape, go for Virtual machine and under "Specialty and previous generation" you will find the AMD Processor, and "Ampere" you will find the ARM Processor. It is recommended to go for the ARM processor as it often has mnuch better performance, and you get more RAM **(WOW! Free RAM in this economy?)**
+Edit the shape, go for Virtual machine and under "Specialty and previous generation" you will find the AMD Processor, and "Ampere" you will find the ARM Processor. It is recommended to go for the ARM processor as it often has much better performance, and you get more RAM **(WOW! Free RAM in this economy?)**
 
 Tap on the Add OCPU button as high as possible until it said you ran out of limit. Click Apply, and head to the next section. Enable Security and next. Create a Primary VNIC, Virtual Cloud Network and a subnet by following the guide on the website. You do not have to change any of the settings when creating them.
 
@@ -87,13 +87,13 @@ Here is some of the ports I have opened
 |  `22`       | SSH |
 | `80`   | HTTP                                                                                                                                                                    |
 | `443`        |HTTPS                                                                                                                                               |
-| `8388`       | TDP/UDP |
+| `8388`       | TCP/UDP |
 | `25565`      |Take a guess? Of course it's for :spoiler[Minecraft Server!]         
 
 To create a ingress of egress rule. Click on the "Add Ingress/Egress rule"
 ![](/assets/images/oracle-server/ingress_rule.webp)
 
-For the "Source CIDR" if you want to be able to access this port everywhere, put **0.0.0.0/0**. Fill in "Srouce Port Range" with **All**, and "Destination Port Range" as needed. I would recommend you to open port **80, 443** and **8388** on both ingress and egress before you add any other ports, it may cause you to have problem accessing package manager later on.
+For the "Source CIDR" if you want to be able to access this port everywhere, put **0.0.0.0/0**. Fill in "Source Port Range" with **All**, and "Destination Port Range" as needed. I would recommend you to open port **80, 443** and **8388** on both ingress and egress before you add any other ports, it may cause you to have problem accessing package manager later on.
 
 Head back to the server detail and start your server with the "Start" button on top right.
 
@@ -193,4 +193,4 @@ What does those command do
 
 Aaaaaaand that is pretty much it. You should by now have a working server and feel free to mess around with it. 
 
-I am planning to have a seperate blog about interesting projects you can run on your server, from easy to hard. This is my first ever blog and hope you like it. There will be more blog abot tech and planes coming up.
+I am planning to have a separate blog about interesting projects you can run on your server, from easy to hard. This is my first ever blog and hope you like it. There will be more blog about tech and planes coming up.
