@@ -4,7 +4,7 @@ published: 2025-12-25
 description: 'Setting up oracle server'
 image: "/assets/images/oracle-server/oserver.webp"
 tags: [Guide,Experience,Blogging]
-category: Guides
+category: Guide
 draft: false 
 lang: ''
 ---
