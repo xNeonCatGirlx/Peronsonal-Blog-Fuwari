@@ -1,5 +1,5 @@
 ---
-title: Free Tier Oracle server experience
+title: How to get a free tier oracle server
 published: 2025-12-25
 description: 'Setting up oracle server'
 image: "/assets/images/oracle-server/oserver.webp"
