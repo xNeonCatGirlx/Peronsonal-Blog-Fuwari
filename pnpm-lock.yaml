@@ -147,6 +147,9 @@ importers:
       '@biomejs/biome':
         specifier: 2.2.5
         version: 2.2.5
+      '@iconify-json/mdi':
+        specifier: ^1.2.3
+        version: 1.2.3
       '@iconify-json/ri':
         specifier: ^1.2.6
         version: 1.2.6
@@ -1100,6 +1103,9 @@ packages:
 
   '@iconify-json/material-symbols@1.2.50':
     resolution: {integrity: sha512-71tjHR70h46LHtBFab3fAd2V/wPTO7JMV5lKnRn3IcF303LaFgAlO0BZeTJDcmCv9d0snRZmnoLZAJVD7/eisw==}
+
+  '@iconify-json/mdi@1.2.3':
+    resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
 
   '@iconify-json/ri@1.2.6':
     resolution: {integrity: sha512-tGXRmXtb8oFu8DNg9MsS1pywKFgs9QZ4U6LBzUamBHaw3ePSiPd7ouE64gzHzfEcR16hgVaXoUa+XxD3BB0XOg==}
@@ -2403,10 +2409,6 @@ packages:
     resolution: {integrity: sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==}
     engines: {node: '>=0.10'}
     hasBin: true
-
-  detect-libc@2.0.4:
-    resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
-    engines: {node: '>=8'}
 
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
@@ -6335,6 +6337,10 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/ri@1.2.6':
     dependencies:
       '@iconify/types': 2.0.0
@@ -6995,8 +7001,8 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.28.0
-      '@babel/types': 7.28.2
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
       '@types/babel__generator': 7.27.0
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.28.0
@@ -7004,18 +7010,18 @@ snapshots:
 
   '@types/babel__generator@7.27.0':
     dependencies:
-      '@babel/types': 7.28.2
+      '@babel/types': 7.28.5
     optional: true
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.28.0
-      '@babel/types': 7.28.2
+      '@babel/parser': 7.28.5
+      '@babel/types': 7.28.5
     optional: true
 
   '@types/babel__traverse@7.28.0':
     dependencies:
-      '@babel/types': 7.28.2
+      '@babel/types': 7.28.5
     optional: true
 
   '@types/debug@4.1.12':
@@ -7802,9 +7808,6 @@ snapshots:
   destr@2.0.5: {}
 
   detect-libc@1.0.3:
-    optional: true
-
-  detect-libc@2.0.4:
     optional: true
 
   detect-libc@2.1.2: {}
@@ -8783,7 +8786,7 @@ snapshots:
 
   lightningcss@1.29.3:
     dependencies:
-      detect-libc: 2.0.4
+      detect-libc: 2.1.2
     optionalDependencies:
       lightningcss-darwin-arm64: 1.29.3
       lightningcss-darwin-x64: 1.29.3

@@ -15,4 +15,4 @@ Like other Mode S communications, ADS-B makes use of the 1090 megahertz transpon
 
 # Resources
 
-Raspberry Pi, SDR 
+Raspberry Pi, SDR Antenna
